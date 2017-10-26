@@ -12,6 +12,75 @@ context Alimentos do
     @alimentos = Alimentos::Alimentos.new(alimento, proteinas, glucidos, lipidos)
   end    
 
+
+describe "Existe un nombre para el alimento" do
+    
+    it "Existe el alimento 3" do
+    expect(@alimentos.get_ali(2)).not_to be_nil
+  end
+  it "Existe el alimento 5" do
+    expect(@alimentos.get_ali(4)).not_to be_nil
+  end
+  it "Existe el alimento 10" do
+    expect(@alimentos.get_ali(9)).not_to be_nil
+  end
+  it "Existe el alimento 8" do
+    expect(@alimentos.get_ali(7)).not_to be_nil
+  end
+  
+end
+
+describe "Existe cantidad de proteinas para el alimento" do
+    
+    it "Existen las proteinas del alimento 3" do
+    expect(@alimentos.get_proteinas(2)).not_to be_nil
+  end
+  it "Existe  las proteinas del alimento 5" do
+    expect(@alimentos.get_proteinas(4)).not_to be_nil
+  end
+  it "Existe las proteinas del alimento 10" do
+    expect(@alimentos.get_proteinas(9)).not_to be_nil
+  end
+  it "Existen las proteinas del alimento 8" do
+    expect(@alimentos.get_proteinas(7)).not_to be_nil
+  end
+  
+end
+
+describe "Existe cantidad de glúcidos para el alimento" do
+    
+    it "Existen los glucidos del alimento 3" do
+    expect(@alimentos.get_glucidos(2)).not_to be_nil
+  end
+  it "Existe  los glucidos del alimento 5" do
+    expect(@alimentos.get_glucidos(4)).not_to be_nil
+  end
+  it "Existe los glucidos del alimento 10" do
+    expect(@alimentos.get_glucidos(9)).not_to be_nil
+  end
+  it "Existen los glucidos del alimento 8" do
+    expect(@alimentos.get_glucidos(7)).not_to be_nil
+  end
+  
+end
+
+describe "Existe cantidad de lípidos para el alimento" do
+    
+    it "Existen los lípidos del alimento 3" do
+    expect(@alimentos.get_lipidos(2)).not_to be_nil
+  end
+  it "Existe  los lípidos del alimento 5" do
+    expect(@alimentos.get_lipidos(4)).not_to be_nil
+  end
+  it "Existe los lípidos del alimento 10" do
+    expect(@alimentos.get_lipidos(9)).not_to be_nil
+  end
+  it "Existen los lípido del alimento 8" do
+    expect(@alimentos.get_lipidos(7)).not_to be_nil
+  end
+  
+end
+
 describe "Existe un método para obtener el nombre de los alimentos" do
   
   it "Existe el yogurt" do
