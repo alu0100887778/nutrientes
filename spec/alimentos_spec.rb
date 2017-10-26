@@ -12,7 +12,7 @@ context Alimentos do
     @alimentos = Alimentos::Alimentos.new(alimento, proteinas, glucidos, lipidos)
   end    
 
-describe "Existen nombres para los alimentos" do
+describe "Existe un método para obtener el nombre de los alimentos" do
   
   it "Existe el yogurt" do
     expect(@alimentos.get_ali(2)).to eq("Yogurt")
@@ -32,6 +32,52 @@ describe "Existen nombres para los alimentos" do
 
 end
 
+describe "Existe un método para obtener el valor de las proteinas de los alimentos" do
+   
+   it "Comprobamos las proteinas del huevo frito" do
+    expect(@alimentos.get_proteinas(0)).to eq(14.1)
+  end
+  
+   it "Comprobamos las proteinas del cerdo" do
+    expect(@alimentos.get_proteinas(3)).to eq(21.5)
+  end
+  
+   it "Comprobamos las proteinas del chocolate" do
+    expect(@alimentos.get_proteinas(10)).to eq(5.3)
+  end
+  
+end
 
+describe "Existe un método para obtener el valor de los glucidos de los alimentos" do
+   
+   it "Comprobamos los glucidos del huevo frito" do
+    expect(@alimentos.get_glucidos(0)).to eq(0.0)
+  end
+  
+   it "Comprobamos los glucidos del cerdo" do
+    expect(@alimentos.get_glucidos(3)).to eq(0.0)
+  end
+  
+   it "Comprobamos los glucidos del chocolate" do
+    expect(@alimentos.get_glucidos(10)).to eq(47.0)
+  end
+  
+end
+
+describe "Existe un método para obtener el valor de los lipidos de los alimentos" do
+   
+   it "Comprobamos los lipidos del huevo frito" do
+    expect(@alimentos.get_lipidos(0)).to eq(19.5)
+  end
+  
+   it "Comprobamos los lipidos del cerdo" do
+    expect(@alimentos.get_lipidos(3)).to eq(6.3)
+  end
+  
+   it "Comprobamos los lipidos del chocolate" do
+    expect(@alimentos.get_lipidos(10)).to eq(30.0)
+  end
+  
+end
 
 end

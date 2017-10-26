@@ -20,6 +20,18 @@ end
 def get_ali(i)
     @alimento[i]
 end
-    
+
+def get_proteinas(i)
+    @proteinas[i]
+end
+
+def get_glucidos(i)
+    @glucidos[i]
+end
+
+def get_lipidos(i)
+    @lipidos[i]
+end
+
 end
 end
