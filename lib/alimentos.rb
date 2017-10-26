@@ -34,7 +34,13 @@ def get_lipidos(i)
 end
 
 def get_calorias(i)
-    @calorias = ((@proteinas[i]*4)+(@glucidos[i]*4)+(@lipidos[i]*9))
+    @calorias = [0.0]
+    @calorias [i] = ((@proteinas[i]*4)+(@glucidos[i]*4)+(@lipidos[i]*9))
+end
+
+def get_formateado(i)
+    get_calorias(i)
+    "#{@alimento[i]}" " = " "#{@proteinas[i]}" " gr de proteinas + " "#{@glucidos[i]}" " gr de glucidos + " "#{@lipidos[i]}" " gr de lipidos | " "#{@calorias[i]}" " Kcal en total"
 end
 
 end

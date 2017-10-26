@@ -103,15 +103,15 @@ end
 
 describe "Existe un método para obtener el valor de las proteinas de los alimentos" do
    
-   it "Comprobamos las proteinas del huevo frito" do
+   it "Comprobamos las proteinas del huevo frito(14.1)" do
     expect(@alimentos.get_proteinas(0)).to eq(14.1)
   end
   
-   it "Comprobamos las proteinas del cerdo" do
+   it "Comprobamos las proteinas del cerdo(21.5)" do
     expect(@alimentos.get_proteinas(3)).to eq(21.5)
   end
   
-   it "Comprobamos las proteinas del chocolate" do
+   it "Comprobamos las proteinas del chocolate(5.3)" do
     expect(@alimentos.get_proteinas(10)).to eq(5.3)
   end
   
@@ -119,15 +119,15 @@ end
 
 describe "Existe un método para obtener el valor de los glucidos de los alimentos" do
    
-   it "Comprobamos los glucidos del huevo frito" do
+   it "Comprobamos los glucidos del huevo frito(0.0)" do
     expect(@alimentos.get_glucidos(0)).to eq(0.0)
   end
   
-   it "Comprobamos los glucidos del cerdo" do
+   it "Comprobamos los glucidos del cerdo80.0)" do
     expect(@alimentos.get_glucidos(3)).to eq(0.0)
   end
   
-   it "Comprobamos los glucidos del chocolate" do
+   it "Comprobamos los glucidos del chocolate(47.0)" do
     expect(@alimentos.get_glucidos(10)).to eq(47.0)
   end
   
@@ -135,15 +135,15 @@ end
 
 describe "Existe un método para obtener el valor de los lipidos de los alimentos" do
    
-   it "Comprobamos los lipidos del huevo frito" do
+   it "Comprobamos los lipidos del huevo frito(19.5)" do
     expect(@alimentos.get_lipidos(0)).to eq(19.5)
   end
   
-   it "Comprobamos los lipidos del cerdo" do
+   it "Comprobamos los lipidos del cerdo(6.3)" do
     expect(@alimentos.get_lipidos(3)).to eq(6.3)
   end
   
-   it "Comprobamos los lipidos del chocolate" do
+   it "Comprobamos los lipidos del chocolate (30)" do
     expect(@alimentos.get_lipidos(10)).to eq(30.0)
   end
   
@@ -151,18 +151,30 @@ end
 
 describe "Existe un método para obtener el valor energético de un alimento" do
  
-  it "Valor energético del pollo" do
+  it "Valor energético del pollo(132.8 Kcal)" do
     expect(@alimentos.get_calorias(5)).to eq(132.8)
   end
   
-  it "Valor energético del huevo frito" do
+  it "Valor energético del huevo frito(231.9 Kcal)" do
     expect(@alimentos.get_calorias(0)).to eq(231.9)
   end
   
-  it "Valor energético del chocolate" do
+  it "Valor energético del chocolate (479.2 Kcal)" do
     expect(@alimentos.get_calorias(10)).to eq(479.2)
   end
   
 end
+
+describe "Existe un método para obtener el alimento formateado." do
+    
+    it "Se muestra correctamente formateado el Yogurt " do
+        expect( @alimentos.get_formateado(2) ).to eq("Yogurt = 3.8 gr de proteinas + 4.9 gr de glucidos + 3.8 gr de lipidos | 69.0 Kcal en total")
+    end 
+    
+    it "Se muestra correctamente formateado las Papas" do
+        expect( @alimentos.get_formateado(14) ).to eq("Papas = 2.0 gr de proteinas + 15.4 gr de glucidos + 0.1 gr de lipidos | 70.5 Kcal en total")
+    end 
+      
+  end  
 
 end
