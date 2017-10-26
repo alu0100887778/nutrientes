@@ -149,4 +149,20 @@ describe "Existe un método para obtener el valor de los lipidos de los alimento
   
 end
 
+describe "Existe un método para obtener el valor energético de un alimento" do
+ 
+  it "Valor energético del pollo" do
+    expect(@alimentos.get_calorias(5)).to eq(132.8)
+  end
+  
+  it "Valor energético del huevo frito" do
+    expect(@alimentos.get_calorias(0)).to eq(231.9)
+  end
+  
+  it "Valor energético del chocolate" do
+    expect(@alimentos.get_calorias(10)).to eq(479.2)
+  end
+  
+end
+
 end

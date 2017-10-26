@@ -33,5 +33,9 @@ def get_lipidos(i)
     @lipidos[i]
 end
 
+def get_calorias(i)
+    @calorias = ((@proteinas[i]*4)+(@glucidos[i]*4)+(@lipidos[i]*9))
+end
+
 end
 end
