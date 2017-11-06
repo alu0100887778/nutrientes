@@ -28,6 +28,20 @@ describe "Uso de listas" do
     expect(@lista.cabecera.valor).to eq("Zanahoria")
     expect(@lista.cabecera.siguiente). to eq(nil)
     end
+    
+    it "Se puede introducir un nuevo elemento/elementos o sacarlo/s en la lista básica" do
+    expect(@lista.push("Chocolate"))
+    expect(@lista.cabecera.prev.valor).to eq("Zanahoria")
+    expect(@lista.cola.valor).to eq("Zanahoria")
+    expect(@lista.cola.prev).to eq(nil)
+    expect(@lista.cabecera.valor).to eq("Chocolate")
+    expect(@lista.cabecera.siguiente).to eq(nil)
+    expect(@lista.pop).to eq("Chocolate")
+    expect(@lista.push(["Almendras", "Avellanas"]))
+    expect(@lista.cabecera.valor).to eq("Avellanas")
+    expect(@lista.cabecera.prev.valor).to eq("Almendras")
+    
+    end
 
 end
 
