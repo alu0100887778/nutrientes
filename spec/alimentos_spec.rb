@@ -16,7 +16,26 @@ context Alimentos do
     @lista = Lista.new();
     @lista.push("Zanahoria")
     
-
+    huevo = [alimento[0],proteinas[0],glucidos[0],lipidos[0]]
+    leche = [alimento[1],proteinas[1],glucidos[1],lipidos[1]]
+    yogurt = [alimento[2],proteinas[2],glucidos[2],lipidos[2]]
+    
+    @lista_lacteos = Lista.new();
+    @lista_lacteos.push([huevo,leche,yogurt])
+    
+    cerdo = [alimento[3],proteinas[3],glucidos[3],lipidos[3]]
+    ternera = [alimento[4],proteinas[4],glucidos[4],lipidos[4]]
+    pollo = [alimento[5],proteinas[5],glucidos[5],lipidos[5]]
+    
+    @lista_carnes = Lista.new();
+    @lista_carnes.push([cerdo,ternera,pollo])
+    
+    bacalao = [alimento[6],proteinas[6],glucidos[6],lipidos[6]]
+    atun = [alimento[7],proteinas[7],glucidos[7],lipidos[7]]
+    salmon = [alimento[8],proteinas[8],glucidos[8],lipidos[8]]
+    
+    @lista_pescado = Lista.new();
+    @lista_pescado.push([bacalao, atun, salmon])
     
   end    
     
@@ -40,6 +59,29 @@ describe "Uso de listas" do
     expect(@lista.push(["Almendras", "Avellanas"]))
     expect(@lista.cabecera.valor).to eq("Avellanas")
     expect(@lista.cabecera.prev.valor).to eq("Almendras")
+    
+    end
+    
+    it "Operaciones sobre la lista de lacteos" do
+    expect(@lista_lacteos.pop).to eq(["Yogurt", 3.8, 4.9, 3.8])
+    expect(@lista_lacteos.pop).to eq( ["Leche vaca", 3.3, 4.8, 3.2])
+    expect(@lista_lacteos.cabecera.valor).to eq(["Huevo frito", 14.1, 0.0, 19.5])
+    end
+    
+    it "Operaciones sobre la lista de carnes" do
+    
+    expect(@lista_carnes.cabecera.valor).to eq(["Pollo", 20.6, 0.0, 5.6])
+    expect(@lista_carnes.cola.valor).to eq( ["Cerdo", 21.5, 0.0, 6.3])
+    expect(@lista_carnes.cabecera.prev.valor).to eq(["Ternera", 21.1, 0.0, 3.1])
+    expect(@lista_carnes.cabecera.siguiente).to eq(nil)
+    expect(@lista_carnes.cabecera.prev.prev.valor).to eq( ["Cerdo", 21.5, 0.0, 6.3])
+    expect(@lista_carnes.cabecera.prev.prev.prev).to eq(nil)
+    expect(@lista_carnes.pop).to eq(["Pollo", 20.6, 0.0, 5.6])
+    expect(@lista_carnes.pop).to eq(["Ternera", 21.1, 0.0, 3.1])
+    expect(@lista_carnes.pop).to eq(["Cerdo", 21.5, 0.0, 6.3])
+    expect(@lista_carnes.pop).to eq(nil)
+    expect(@lista_carnes.push([["Solomillo", 22.5, 23.2, 34.5]]))
+    expect(@lista_carnes.cabecera.valor).to eq(["Solomillo", 22.5, 23.2, 34.5])
     
     end
 
