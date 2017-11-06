@@ -84,7 +84,24 @@ describe "Uso de listas" do
     expect(@lista_carnes.cabecera.valor).to eq(["Solomillo", 22.5, 23.2, 34.5])
     
     end
-
+    
+    it "Operaciones sobre la lista de pescados" do
+    
+    expect(@lista_pescado.cabecera.valor).to eq(["Salmon", 19.9, 0.0, 13.6])
+    expect(@lista_pescado.cola.valor).to eq( ["Bacalao", 17.7, 0.0, 0.4])
+    expect(@lista_pescado.cabecera.prev.valor).to eq( ["Atún", 21.5, 0.0, 15.5])
+    expect(@lista_pescado.cabecera.siguiente).to eq(nil)
+    expect(@lista_pescado.cabecera.prev.prev.valor).to eq(["Bacalao", 17.7, 0.0, 0.4])
+    expect(@lista_pescado.cabecera.prev.prev.prev).to eq(nil)
+    expect(@lista_pescado.pop).to eq(["Salmon", 19.9, 0.0, 13.6])
+    expect(@lista_pescado.pop).to eq( ["Atún", 21.5, 0.0, 15.5])
+    expect(@lista_pescado.pop).to eq(["Bacalao", 17.7, 0.0, 0.4])
+    expect(@lista_pescado.pop).to eq(nil)
+    expect(@lista_carnes.push([["Panga", 22.5, 23.2, 34.5]]))
+    expect(@lista_carnes.cabecera.valor).to eq(["Panga", 22.5, 23.2, 34.5])
+    
+    
+    end
 end
 
 describe "Existe un nombre para el alimento" do
