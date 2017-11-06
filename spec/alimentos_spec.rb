@@ -13,11 +13,23 @@ context Alimentos do
     
     @alimentos = Alimentos::Alimentos.new(alimento, proteinas, glucidos, lipidos)
     
-   
+    @lista = Lista.new();
+    @lista.push("Zanahoria")
+    
+
     
   end    
     
 
+describe "Uso de listas" do
+    
+    it "Comprobación de valores de una lista básica" do
+    expect(@lista.cola.valor).to eq("Zanahoria")
+    expect(@lista.cabecera.valor).to eq("Zanahoria")
+    expect(@lista.cabecera.siguiente). to eq(nil)
+    end
+
+end
 
 describe "Existe un nombre para el alimento" do
     
