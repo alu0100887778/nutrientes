@@ -62,13 +62,13 @@ describe "Uso de listas" do
     
     end
     
-    it "Operaciones sobre la lista de lacteos" do
+    it "Operaciones sobre la lista de lacteos  (comprobación de valores, push y pop)" do
     expect(@lista_lacteos.pop).to eq(["Yogurt", 3.8, 4.9, 3.8])
     expect(@lista_lacteos.pop).to eq( ["Leche vaca", 3.3, 4.8, 3.2])
     expect(@lista_lacteos.cabecera.valor).to eq(["Huevo frito", 14.1, 0.0, 19.5])
     end
     
-    it "Operaciones sobre la lista de carnes" do
+    it "Operaciones sobre la lista de carnes (comprobación de valores, push y pop)" do
     
     expect(@lista_carnes.cabecera.valor).to eq(["Pollo", 20.6, 0.0, 5.6])
     expect(@lista_carnes.cola.valor).to eq( ["Cerdo", 21.5, 0.0, 6.3])
@@ -85,7 +85,7 @@ describe "Uso de listas" do
     
     end
     
-    it "Operaciones sobre la lista de pescados" do
+    it "Operaciones sobre la lista de pescados  (comprobación de valores, push y pop)" do
     
     expect(@lista_pescado.cabecera.valor).to eq(["Salmon", 19.9, 0.0, 13.6])
     expect(@lista_pescado.cola.valor).to eq( ["Bacalao", 17.7, 0.0, 0.4])
