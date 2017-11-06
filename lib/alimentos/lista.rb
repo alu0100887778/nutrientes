@@ -17,7 +17,53 @@ class Lista
        @cola= nil
   end
   
-
+  
+  ##Metodo push de a lista que introduce los valores dentro de la misma
+  
+  def push (valores)
+          
+          if(valores.instance_of? Array)
+              if(@cola == nil)
+                
+                @cola = Nodo.new(valores[0],nil,nil)
+                @cabecera = @cola
+                valores.shift()
+              end
+  
+            valores.each do |valor|
+            aux= @cabecera
+            @cabecera = Nodo.new(valor,nil,aux)
+            aux.siguiente= @cabecera
+  	end
+          else
+  
+            if(@cola==nil)
+              @cola = Nodo.new(valores,nil,nil)
+              @cabecera = @cola
+            else
+             aux= @cabecera
+            @cabecera = Nodo.new(valores,nil,aux)
+            aux.siguiente= @cabecera
+            end
+          end
+          
+  end
+  
+  
+  ##Funcion pop que devuelve el valor de la cabecera y la elimina de la lista
+  def pop
+  	if(@cabecera!=nil)
+  	node = @cabecera
+  	@cabecera = @cabecera.prev
+    if(@cabecera!=nil)
+    @cabecera.siguiente = nil
+    node.prev= nil
+  else @cola = nil
+    end
+  	return node.valor
+  	end
+  end
+  
 end
   
   
