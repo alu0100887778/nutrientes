@@ -51,3 +51,20 @@ end
 
 end
 end
+
+class Lacteos < Alimentos::Alimentos
+    
+    
+    ##Añadimos atributo de lectura a la variable edad
+    attr_reader :alimento
+    
+    ##Inicializacio de variables de la clase
+    def initialize(alimento, proteinas, glucidos, lipidos)
+     @alimento = alimento
+    @proteinas = proteinas
+    @glucidos = glucidos
+    @lipidos = lipidos
+    
+    end
+  
+end

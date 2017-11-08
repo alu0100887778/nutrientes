@@ -37,6 +37,8 @@ context Alimentos do
     @lista_pescado = Lista.new();
     @lista_pescado.push([bacalao, atun, salmon])
     
+    @menu_lacteos = Lacteos.new("Yogurt", 15.2, 40.4, 23.1)
+    
   end    
     
 
@@ -102,6 +104,21 @@ describe "Uso de listas" do
     
     
     end
+end
+
+
+describe "Pruebas de herencia" do
+  
+  it "Pruebas de herencia" do
+    expect(@alimentos.class).to eq(Alimentos::Alimentos)
+    expect(Alimentos::Alimentos.class).to eq(Class)
+    expect(Alimentos.class).to eq(Module)
+    expect(@menu_lacteos.instance_of?Lacteos).to eq(true)
+    expect(Lacteos.is_a?Class).to eq(true)
+    expect(@menu_lacteos.is_a?Alimentos::Alimentos).to eq(true)
+    
+  end
+  
 end
 
 describe "Existe un nombre para el alimento" do
