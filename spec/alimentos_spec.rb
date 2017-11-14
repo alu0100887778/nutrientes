@@ -38,9 +38,16 @@ context Alimentos do
     @lista_pescado.push([bacalao, atun, salmon])
     
     @menu_lacteos = Lacteos.new("Yogurt", 15.2, 40.4, 23.1, yogurt)
+     
+    @list = Lista.new()
+    @list.push([6,7,8,10,23,1,15])
+  
+       
+    
     
   end    
     
+
 
 describe "Uso de listas" do
     

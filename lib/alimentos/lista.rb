@@ -67,6 +67,15 @@ class Lista
   	end
   end
   
+    def each
+    nodo = @cola
+    while(nodo != nil)
+        yield nodo.valor
+        nodo = nodo.siguiente
+    end
+    
+  end
+  
 end
   
   
