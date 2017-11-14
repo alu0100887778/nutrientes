@@ -59,12 +59,11 @@ class Lacteos < Alimentos::Alimentos
     attr_reader :alimento
     
     ##Inicializacio de variables de la clase
-    def initialize(alimento, proteinas, glucidos, lipidos)
-     @alimento = alimento
+    def initialize(alimento, proteinas, glucidos, lipidos,dieta)
+    @alimento = alimento
     @proteinas = proteinas
     @glucidos = glucidos
     @lipidos = lipidos
-    
     end
   
 end

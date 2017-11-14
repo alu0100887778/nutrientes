@@ -6,6 +6,9 @@ Nodo = Struct.new(:valor, :siguiente, :prev)
 
 ##Definicion de la Clase Lista
 class Lista
+  
+  ##Incluimos el Enumerable
+  include Enumerable
     
   ##Añadimos atributo de lectura
   attr_reader :cabecera, :cola
