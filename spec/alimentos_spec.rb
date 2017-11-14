@@ -48,7 +48,25 @@ context Alimentos do
   end    
     
 
-
+describe "Uso del enumerable" do
+   
+    it "Pruebas metodo min" do
+         expect(@list.min).to eq(1)
+    end
+       
+    it "Pruebas metodo max" do
+         expect(@list.max).to eq(23)
+    end
+      
+    it "Prueba metodo sort" do
+        expect(@list.sort).to eq([1, 6, 7, 8, 10, 15, 23])
+    end
+    
+    it"Prueba de metodo minmax" do
+        expect(@list.minmax).to eq([1,23])
+    end
+    
+end
 describe "Uso de listas" do
     
     it "Comprobación de valores de una lista básica" do
