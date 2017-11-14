@@ -1,16 +1,18 @@
 require "alimentos/version.rb"
 
+#Modulo alimentos
 module Alimentos
 
+#Clase alimentos
 class Alimentos
-    
+
+#Añadimos atributos de lectura
 attr_reader :alimentos, :proteinas, :glucidos, :lipidos
 
 ##Incluimos el comparable
 include Comparable
 
 #Inicializamos las variables
-
 def initialize(alimento,proteinas,glucidos,lipidos)
     
     @alimento = alimento
@@ -62,6 +64,7 @@ end
 end
 end
 
+##Clase Lacteos heredada de alimentos
 class Lacteos < Alimentos::Alimentos
     
     

@@ -22,7 +22,6 @@ class Lista
   
   
   ##Metodo push de a lista que introduce los valores dentro de la misma
-  
   def push (valores)
           
           if(valores.instance_of? Array)
