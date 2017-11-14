@@ -6,6 +6,9 @@ class Alimentos
     
 attr_reader :alimentos, :proteinas, :glucidos, :lipidos
 
+##Incluimos el comparable
+include Comparable
+
 #Inicializamos las variables
 
 def initialize(alimento,proteinas,glucidos,lipidos)
