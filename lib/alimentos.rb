@@ -52,6 +52,13 @@ def get_formateado(i)
     "#{@alimento[i]}" " = " "#{@proteinas[i]}" " gr de proteinas + " "#{@glucidos[i]}" " gr de glucidos + " "#{@lipidos[i]}" " gr de lipidos | " "#{@calorias[i]}" " Kcal en total"
 end
 
+
+     
+##Metodo menor,mayor o igual del enumerable
+def <=> (another)
+     get_vct <=> another.get_vct
+end
+
 end
 end
 
