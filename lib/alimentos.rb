@@ -56,7 +56,7 @@ end
      
 ##Metodo menor,mayor o igual del enumerable
 def <=> (another)
-     get_vct <=> another.get_vct
+     @proteinas <=> another.proteinas
 end
 
 end

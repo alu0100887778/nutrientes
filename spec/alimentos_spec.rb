@@ -12,7 +12,7 @@ context Alimentos do
     lipidos = [19.5,3.2,3.8,6.3,3.1,5.6,0.4,15.5,13.6,99.6,30.0,0.0,0.6,1.4,0.1,0.2,0.3,0.4,0.2]
     
     @alimentos = Alimentos::Alimentos.new(alimento, proteinas, glucidos, lipidos)
-    
+
     @lista = Lista.new();
     @lista.push("Zanahoria")
     
@@ -42,31 +42,56 @@ context Alimentos do
     @list = Lista.new()
     @list.push([6,7,8,10,23,1,15])
   
-       
-    
+      
+    @menu1 = Alimentos::Alimentos.new("Huevo frito", 14.1,0.0,19.5)
+    @menu2 = Alimentos::Alimentos.new("Yogurt", 3.3,4.0,3.2)
+    @menu3 = Alimentos::Alimentos.new("Yogurt", 3.3,4.0,3.2)
+    @menu4 = Alimentos::Alimentos.new("Cerdo", 21.5,0.0,6.3)
+    @menu5 = Alimentos::Alimentos.new("Bacalao",17.7,0.0,0.4)
+    @menu6 = Alimentos::Alimentos.new("Platanos", 1.2,21.4,0.2)
+
     
   end    
     
 
 describe "Uso del enumerable" do
    
-    it "Pruebas metodo min" do
+    it "Pruebas metodo min con lista basica" do
          expect(@list.min).to eq(1)
     end
        
-    it "Pruebas metodo max" do
+    it "Pruebas metodo max con lista basica" do
          expect(@list.max).to eq(23)
     end
       
-    it "Prueba metodo sort" do
+    it "Prueba metodo sort con lista basica" do
         expect(@list.sort).to eq([1, 6, 7, 8, 10, 15, 23])
     end
     
-    it"Prueba de metodo minmax" do
+    it"Prueba de metodo minmax con lista basica" do
         expect(@list.minmax).to eq([1,23])
     end
-    
 end
+
+describe "Uso del comparable" do
+    
+    it "Comprobando metodo comparable >/< para las proteinas de diferentes menus:"do
+    expect(@menu1 > @menu2).to eq(true)
+    expect(@menu1 < @menu2).to eq(false)
+    end
+    it "Comprobando metodo comparable = para las proteinas de diferentes menus:"do
+    expect(@menu2 == @menu3).to eq(true)
+    expect(@menu1 == @menu2).to eq(false)
+    end
+    it "Comprobando metodo comparable <=/>= para las proteinas de diferentes menus:"do
+    expect(@menu4 >= @menu5).to eq(true)
+    expect(@menu6 <= @menu5).to eq(true)
+     expect(@menu2 >= @menu3).to eq(true)
+    expect(@menu2 <= @menu3).to eq(true)
+    end
+
+end
+
 describe "Uso de listas" do
     
     it "Comprobación de valores de una lista básica" do
