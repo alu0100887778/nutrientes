@@ -49,6 +49,9 @@ context Alimentos do
     @menu4 = Alimentos::Alimentos.new("Cerdo", 21.5,0.0,6.3)
     @menu5 = Alimentos::Alimentos.new("Bacalao",17.7,0.0,0.4)
     @menu6 = Alimentos::Alimentos.new("Platanos", 1.2,21.4,0.2)
+    
+    @lista_menus = Lista.new()
+    @lista_menus.push([@menu1,@menu2,@menu4,@menu5,@menu6])
 
     
   end    
@@ -70,6 +73,22 @@ describe "Uso del enumerable" do
     
     it"Prueba de metodo minmax con lista basica" do
         expect(@list.minmax).to eq([1,23])
+    end
+    
+    it"Prueba de metodo min con lista de menus" do
+      expect(@lista_menus.min).to eq(@menu6)
+    end
+    
+    it "Pruebas metodo max con lista de menus" do
+         expect(@lista_menus.max).to eq(@menu4)
+    end
+      
+    it "Prueba metodo sort con lista de menus" do
+        expect(@lista_menus.sort).to eq([@menu6, @menu2, @menu1,@menu5,@menu4])
+    end
+    
+    it"Prueba de metodo minmax con lista de menus" do
+        expect(@lista_menus.minmax).to eq([@menu6,@menu4])
     end
 end
 
