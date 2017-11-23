@@ -83,6 +83,14 @@ describe "Pruebas de programacion funcional" do
     expect(@Glucosa.aibc(0)).to eq(255.99999999999997)
   end 
 
+ it "Calculo de indice glucemico por individuo " do
+    expect((@CompManzana.aibc(0) / @Glucosa.aibc(0)) * 100).to  eq(10.937499999999998)
+    expect((@CompManzana.aibc(1) / @Glucosa.aibc(1)) * 100).to  eq(93.49489795918366)
+    expect((@Yogurt.aibc(0) / @Glucosa.aibc(0)) * 100).to  eq(11.914062500000016)
+    expect((@Yogurt.aibc(1) / @Glucosa.aibc(1)) * 100).to  eq(70.66326530612243)
+    expect((@Chocolate.aibc(0) / @Glucosa.aibc(0)) * 100).to  eq(7.226562500000004)
+    expect((@Chocolate.aibc(1) / @Glucosa.aibc(1)) * 100).to  eq(22.83163265306124)
+  end 
 
     
 end
