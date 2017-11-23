@@ -8,6 +8,8 @@ class Alimentos
 
 #Añadimos atributos de lectura
 attr_reader :alimentos, :proteinas, :glucidos, :lipidos
+attr_accessor :data
+
 
 ##Incluimos el comparable
 include Comparable
@@ -61,22 +63,30 @@ def <=> (another)
      @proteinas <=> another.proteinas
 end
 
+
+##Metodo para calcular AIBC
+def aibc(index)
+    auxiliar = []
+    data[index][1..data[index].length - 1].zip(data[index][0..data[index].length-2]) do |x,y|
+        if x < data[index][0]
+            auxiliar << 0.0
+        else
+            auxiliar << (((x - data[index][0]) + (y - data[index][0]))/2) * 5
+        end
+    end
+    auxiliar.reduce(:+)
+end
+
 end
 end
 
 ##Clase Lacteos heredada de alimentos
 class Lacteos < Alimentos::Alimentos
-    
-    
-    ##Añadimos atributo de lectura a la variable edad
-    attr_reader :alimento
-    
+
     ##Inicializacio de variables de la clase
-    def initialize(alimento, proteinas, glucidos, lipidos,dieta)
-    @alimento = alimento
-    @proteinas = proteinas
-    @glucidos = glucidos
-    @lipidos = lipidos
+    def initialize(alimento, proteinas, glucidos, lipidos, subali)
+    super(alimento,proteinas,glucidos,lipidos)
+    @subali = subali
     end
   
 end

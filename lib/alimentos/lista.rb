@@ -66,6 +66,7 @@ class Lista
   	end
   end
   
+  ##metodo each
     def each
     nodo = @cola
     while(nodo != nil)
