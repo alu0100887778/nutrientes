@@ -91,7 +91,19 @@ describe "Pruebas de programacion funcional" do
     expect((@Chocolate.aibc(0) / @Glucosa.aibc(0)) * 100).to  eq(7.226562500000004)
     expect((@Chocolate.aibc(1) / @Glucosa.aibc(1)) * 100).to  eq(22.83163265306124)
   end 
-
+  
+  it "Calculo de indice glucemico del alimento" do
+    auxiliar = (0..@CompManzana.data.length - 1).map { |x| (@CompManzana.aibc(x) / @Glucosa.aibc(x)) * 100}
+    igCompManz = auxiliar.reduce(:+)/@CompManzana.data.length - 1
+    auxiliar = (0..@Yogurt.data.length - 1).map { |x| (@Yogurt.aibc(x) / @Glucosa.aibc(x)) * 100}
+    igYogurt = auxiliar.reduce(:+)/@Yogurt.data.length - 1
+    auxiliar = (0..@Chocolate.data.length - 1).map { |x| (@Chocolate.aibc(x) / @Glucosa.aibc(x)) * 100}
+    igChocolate = auxiliar.reduce(:+)/@Yogurt.data.length - 1
+    
+    expect(igCompManz).to eq(51.21619897959183)
+    expect(igYogurt).to eq(40.28866390306122)
+    expect(igChocolate).to eq(14.029097576530623)
+  end 
     
 end
 
