@@ -2,6 +2,10 @@ require "spec_helper"
 require "./lib/alimentos.rb"
 require  "./lib/alimentos/lista.rb"
 
+        
+require 'benchmark'
+include Benchmark
+
 context Alimentos do
   
   before :all do 
@@ -55,9 +59,36 @@ context Alimentos do
 
     
   end    
-    
 
-describe "Pruebas de programacion funcional" do
+
+describe "Pruebas para ordenar" do
+    
+     
+        alimento = ['Huevo frito','Leche vaca','Yogurt','Cerdo','Ternera','Pollo','Bacalao','Atún','Salmon','Aceite de oliva','Chocolate','Azúcar','Arroz','Lentejas','Papas','Tomate','Cebolla','Manzana','Plátanos']
+        proteinas = [14.1,3.3,3.8,21.5,21.1,20.6,17.7,21.5,19.9,0.0,5.3,0.0,6.8,23.5,2.0,1.0,1.3,0.3,1.2]
+        glucidos = [0.0,4.8,4.9,0.0,0.0,0.0,0.0,0.0,0.0,0.2,47.0,99.8,77.7,52.0,15.4,3.5,5.8,12.4,21.4]
+        lipidos = [19.5,3.2,3.8,6.3,3.1,5.6,0.4,15.5,13.6,99.6,30.0,0.0,0.6,1.4,0.1,0.2,0.3,0.4,0.2]
+           
+        bacalao = [alimento[6],proteinas[6],glucidos[6],lipidos[6]]
+        atun = [alimento[7],proteinas[7],glucidos[7],lipidos[7]]
+        salmon = [alimento[8],proteinas[8],glucidos[8],lipidos[8]]
+  
+        lista_pescados2 = Lista.new()
+        lista_pescados2.push(bacalao)
+        lista_pescados2.push(atun)
+        lista_pescados2.push(salmon)
+
+        
+    it "Se convierte a array" do
+        auxiliar = []
+        auxiliar = lista_pescados2.convert(lista_pescados2)
+        expect(lista_pescados2.size).to eq(auxiliar.length)
+    end
+
+    
+end
+
+describe "Pruebas de programacionn funcional" do
     
     before :each do
         @CompManzana = Lacteos.new("Compota de manzana", 4.1, 0.0, 9.5, "Frutas y derivados" )

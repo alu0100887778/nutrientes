@@ -11,13 +11,14 @@ class Lista
   include Enumerable
     
   ##Añadimos atributo de lectura
-  attr_reader :cabecera, :cola
+  attr_reader :cabecera, :cola, :size
   
   
   ##Inicializamos la cabecera y la cola de la lista a nulo
   def initialize
   	   @cabecera = nil
        @cola= nil
+       @size = 0
   end
   
   
@@ -30,22 +31,26 @@ class Lista
                 @cola = Nodo.new(valores[0],nil,nil)
                 @cabecera = @cola
                 valores.shift()
+                 @size = @size + 1
               end
   
             valores.each do |valor|
             aux= @cabecera
             @cabecera = Nodo.new(valor,nil,aux)
             aux.siguiente= @cabecera
-  	end
+             @size = @size + 1
+  	      end
           else
   
             if(@cola==nil)
               @cola = Nodo.new(valores,nil,nil)
               @cabecera = @cola
+              @size = @size + 1
             else
              aux= @cabecera
             @cabecera = Nodo.new(valores,nil,aux)
             aux.siguiente= @cabecera
+             @size = @size + 1
             end
           end
           
@@ -73,9 +78,13 @@ class Lista
         yield nodo.valor
         nodo = nodo.siguiente
     end
+    end
     
-  end
-  
+    def convert lista
+        lista.map { |x| x}
+    end
+    
+
 end
   
   
