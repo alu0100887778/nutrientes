@@ -108,6 +108,15 @@ describe "Pruebas para ordenar" do
       expect(aux[2]).to eq("Atún")
     end 
     
+      it "Tiempos de ejecucion" do
+        
+        Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
+            tf = x.report("for") {for i in 0..30 do lista_pescados2.ordenarFor(lista_pescados2) end}
+            tf = x.report("each") {for i in 0..30 do lista_pescados2.ordenarEach(lista_pescados2) end}
+        end
+        
+end
+    
 end
 
 describe "Pruebas de programacionn funcional" do
