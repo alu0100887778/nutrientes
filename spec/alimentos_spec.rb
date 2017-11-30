@@ -91,7 +91,22 @@ describe "Pruebas para ordenar" do
         expect(auxiliar[0]).to eq("Bacalao")
         expect(auxiliar[2]).to eq("Atún")
     end
+    
+       it "Ordenación por each" do 
+      aux = []
+      aux = lista_pescados2.ordenarEach(lista_pescados2)
 
+      expect(aux[0]).to eq("Bacalao")
+      expect(aux[2]).to eq("Atún")
+    end 
+    
+    it "Ordenación por sort" do 
+      aux = []
+      aux = lista_pescados2.ordenarFor(lista_pescados2)
+      
+      expect(aux[0]).to eq("Bacalao")
+      expect(aux[2]).to eq("Atún")
+    end 
     
 end
 

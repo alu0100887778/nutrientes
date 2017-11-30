@@ -99,7 +99,31 @@ class Lista
         auxList
     end 
     
-
+    #Método para ordenar un array creado a partir de una lista.
+    def ordenarEach lista
+        auxList = lista.convert lista 
+        indice = 0
+        auxList.each do |x|
+            auxList.each do |y|
+                if (indice < auxList.length-1)
+                    if (auxList[indice].to_f > auxList[indice+1].to_f)
+                        temporal = auxList[indice]
+                        auxList[indice] = auxList[indice+1]
+                        auxList[indice+1] = temporal 
+                    end
+                end
+                indice = indice+1
+            end
+            indice = 0
+        end
+        auxList
+    end
+    
+    #Método para ordenar un array creado a partir de una lista usando el método sort
+    def ordenarSort lista
+        auxList = lista.convert lista 
+        auxList.sort
+    end 
 end
   
   
