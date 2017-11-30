@@ -84,6 +84,21 @@ class Lista
         lista.map { |x| x}
     end
     
+      #Método para ordenar un array creado a partir de una lista.
+    def ordenarFor lista
+        auxList = lista.convert lista
+        for i in 0..(auxList.length) do
+            for j in 0..(auxList.length-2) do 
+                if(auxList[j].to_f > auxList[j+1].to_f)
+                    temporal = auxList[j]
+                    auxList[j] = auxList[j+1]
+                    auxList[j+1] = temporal 
+                end
+            end 
+        end
+        auxList
+    end 
+    
 
 end
   

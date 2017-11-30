@@ -84,6 +84,13 @@ describe "Pruebas para ordenar" do
         auxiliar = lista_pescados2.convert(lista_pescados2)
         expect(lista_pescados2.size).to eq(auxiliar.length)
     end
+    
+     it "Ordenacion por for" do
+        auxiliar = []
+        auxiliar = lista_pescados2.ordenarFor(lista_pescados2)
+        expect(auxiliar[0]).to eq("Bacalao")
+        expect(auxiliar[2]).to eq("Atún")
+    end
 
     
 end
