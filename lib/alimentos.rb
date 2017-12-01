@@ -11,7 +11,7 @@ attr_reader :alimentos, :proteinas, :glucidos, :lipidos
 attr_accessor :data
 
 
-##Incluimos el comparable
+##Incluimos el comparablddde
 include Comparable
 
 #Inicializamos las variables
